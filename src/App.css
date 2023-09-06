@@ -10,26 +10,6 @@
 	/* grid-gap: 10px; */
  }
  
- .header {
-	grid-area: h;
-	background-color: green;
- }
- .header img {
-	width: 60px;
-	height: 60px;
-	opacity: 0.5;
- }
- 
- .nav {
-	grid-area: n;
-	background-color: burlywood;
- }
- 
- .content {
-	grid-area: c;
-	background-color: cornflowerblue;
- }
- .content img {
-	width: 100%;
- }
+
+
  
