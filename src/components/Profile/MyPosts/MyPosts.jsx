@@ -30,6 +30,7 @@ const MyPosts = (props) => {
 				<Post message={postData[3].message} likesCount={postData[3].likesCount} />
 				<Post message={postData[4].message} likesCount={postData[4].likesCount} />
 				<Post message={postData[5].message} likesCount={postData[5].likesCount} />
+				
          </div>
       </div>
    );
