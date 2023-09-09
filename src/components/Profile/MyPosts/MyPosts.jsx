@@ -10,7 +10,8 @@ const MyPosts = (props) => {
 
 	let addPost = () => {
 		let text = newPostElement.current.value
-		alert(text);
+		// прокинутая функция из state
+		props.addPost(text);
 	}
 
 
