@@ -12,6 +12,7 @@ const MyPosts = (props) => {
 		let text = newPostElement.current.value
 		// прокинутая функция из state
 		props.addPost(text);
+		newPostElement.current.value='';
 	}
 
 

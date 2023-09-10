@@ -1,4 +1,4 @@
-
+import { rerenderEntireTree } from "../render";
 
 // шаг 1
 // let posts = [
@@ -97,6 +97,7 @@ export let addPost = (postMessage) => {
 	};
 
 	state.profilePage.posts.push(newPost);
+	rerenderEntireTree(state);
 }
 
 export default state;
