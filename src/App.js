@@ -34,7 +34,15 @@ return (
 
 			<Route path="/dialogs/*" element={<Dialogs 
 															state={props.state.dialogsPages} />} />
-			<Route path="/profile" element={<Profile state={props.state.profilePage} addPost={props.addPost}/>} />
+			<Route path="/profile" element={<Profile 
+														profilePage={props.state.profilePage}
+														updateNewPostText={props.updateNewPostText}
+														addPost={props.addPost}/>}
+														/>
+															
+															
+															
+																
 
 		</Routes>
 	</div>

@@ -67,7 +67,8 @@ let state = {
 			{id: 4, message: 'and you', likesCount: 23},
 			{id: 5, message: 'How old are you', likesCount: 75},
 			{id: 6, message: 'You are the best', likesCount: 101},
-		]
+		],
+		newPostText: 'it-kamasutra.com'
 	},
 	dialogsPages: {
 		dialogs: [
@@ -89,14 +90,25 @@ let state = {
 	},
 }
 
-export let addPost = (postMessage) => {
+// для провери работы
+// window.state = state;
+
+// export let addPost = (postMessage) => {
+
+export let addPost = () => {
 	let newPost = {
 		id: 5,
-		message: postMessage,
+		message: state.profilePage.newPostText,
 		likesCount: 0
 	};
 
 	state.profilePage.posts.push(newPost);
+	state.profilePage.newPostText = '';
+	rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+	state.profilePage.newPostText = newText;
 	rerenderEntireTree(state);
 }
 
