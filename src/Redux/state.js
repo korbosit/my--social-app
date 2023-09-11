@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+	console.log('State changed');
+}
 
 // шаг 1
 // let posts = [
@@ -91,11 +93,11 @@ let state = {
 }
 
 // для провери работы
-// window.state = state;
+window.state = state;
 
 // export let addPost = (postMessage) => {
 
-export let addPost = () => {
+export const addPost = () => {
 	let newPost = {
 		id: 5,
 		message: state.profilePage.newPostText,
@@ -107,9 +109,13 @@ export let addPost = () => {
 	rerenderEntireTree(state);
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
 	state.profilePage.newPostText = newText;
 	rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+	rerenderEntireTree = observer; // наблюдатель - паттерн , похож на // publisher-subscriber, по этому принципу работает addEventListener
 }
 
 export default state;
