@@ -1,11 +1,10 @@
 import React from 'react';
-import state, { subscribe } from './Redux/state';
+import store  from './Redux/state';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { addPost, updateNewPostText } from './Redux/state';
 
 
 // перерисовать все дерево
@@ -32,7 +31,10 @@ let rerenderEntireTree = (state) => {
 	root.render(
 		<React.StrictMode>
 			<BrowserRouter>
-				<App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
+				<App state={state}
+						addPost={store.addPost.bind(store)}
+						updateNewPostText={store.updateNewPostText.bind(store)}
+						/>
 			</BrowserRouter>
 		</React.StrictMode>
 	);
@@ -40,8 +42,8 @@ let rerenderEntireTree = (state) => {
 	// ...
 }
 
-rerenderEntireTree(state);
-subscribe(rerenderEntireTree);
+rerenderEntireTree(store.getState());
+store.subscribe(rerenderEntireTree);
 
 
 
