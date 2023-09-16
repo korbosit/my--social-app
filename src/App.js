@@ -31,9 +31,10 @@ return (
 															messages={props.state.dialogsPages.messages} />} />
 
 			<Route path="/profile" element={<Profile posts={props.state.profilePage.posts} />} /> */}
-
-			<Route path="/dialogs/*" element={<Dialogs 
-															state={props.state.dialogsPages} />} />
+			{/* Route специальные компоненты которые просто следят за урлом. Чтобы происходила смена в браузере урлов без перезагрузки страницы мы используем Navlink. Route и  Navlink два независимых компонента */}
+			<Route path="/dialogs/*" element={<Dialogs
+															store = {props.store}
+															/>} />
 			<Route path="/profile" element={<Profile 
 														profilePage={props.state.profilePage}
 														dispatch={props.dispatch}/>}
