@@ -21,7 +21,19 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 // 	return state;
 // }
 
-const profileReducer = (state, action) => {
+let initialState = {
+	posts: [
+		{ id: 1, message: "Hi, how are you?", likesCount: 1 },
+		{ id: 2, message: "Its my first posts", likesCount: 5 },
+		{ id: 3, message: "im fine", likesCount: 7 },
+		{ id: 4, message: "and you", likesCount: 23 },
+		{ id: 5, message: "How old are you", likesCount: 75 },
+		{ id: 6, message: "You are the best", likesCount: 101 },
+	],
+	newPostText: "it-kamasutra.com",
+};
+
+const profileReducer = (state = initialState, action) => {
 	switch(action.type) {
 		case ADD_POST:
 			let newPost = {
