@@ -36,8 +36,7 @@ return (
 															state={props.state.dialogsPages} />} />
 			<Route path="/profile" element={<Profile 
 														profilePage={props.state.profilePage}
-														updateNewPostText={props.updateNewPostText}
-														addPost={props.addPost}/>}
+														dispatch={props.dispatch}/>}
 														/>
 															
 															
