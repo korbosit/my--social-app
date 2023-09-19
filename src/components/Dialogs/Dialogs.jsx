@@ -4,6 +4,7 @@ import Message from './Message/Message';
 import s from './Dialogs.module.css'; 
 
 
+
 const Dialogs = (props) => {
 	let state = props.dialogsPages;
 
@@ -18,8 +19,6 @@ const Dialogs = (props) => {
 		let body = e.target.value;
 		props.updateNewMessageBody(body);
 	}
-
-
 
    return (	
       <div>
