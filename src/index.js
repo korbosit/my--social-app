@@ -28,8 +28,6 @@ import { Provider } from 'react-redux';
 
 let root = ReactDOM.createRoot(document.getElementById('root'));
 
-// функция, которую мы запускаем, чтобы отрисовать всен наше дерево
-let rerenderEntireTree = (state) => {
 	root.render(
 		<React.StrictMode>
 			{/* все что внутри BrowserRouter могло переключаться, урловые переключения */}
@@ -41,14 +39,8 @@ let rerenderEntireTree = (state) => {
 		</React.StrictMode>
 	);
 
-	// ...
-}
 
-rerenderEntireTree(store.getState());
-store.subscribe(() => {
-	let state = store.getState();
-	rerenderEntireTree(state);
-});
+
 
 
 
